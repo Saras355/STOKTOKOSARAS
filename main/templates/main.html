@@ -51,16 +51,46 @@
         {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
     
         {% for product in products %}
-            <tr>
-                <td style="border: 1px solid #000; padding: 8px;">{{product.name}}</td>
-                <td style="border: 1px solid #000; padding: 8px;">{{product.price}}</td>
-                <td style="border: 1px solid #000; padding: 8px;">{{product.amount}}</td>
-                <td style="border: 1px solid #000; padding: 8px;">{{product.description}}</td>
-                <td style="border: 1px solid #000; padding: 8px;">{{product.date_added}}</td>
-            </tr>
+        <tr>
+            <td style="border: 1px solid #000; padding: 8px;">{{ product.name }}</td>
+            <td style="border: 1px solid #000; padding: 8px;">{{ product.price }}</td>
+            <td style="border: 1px solid #000; padding: 8px;">
+                {{ product.amount }}
+                <form method="post" action="{% url 'main:add_product' product.id %}">
+                    {% csrf_token %}
+                    <button type="submit" name="action" value="add">Tambah</button>
+                </form>
+                <form method="post" action="{% url 'main:subtract_product' product.id %}">
+                    {% csrf_token %}
+                    <button type="submit" name="action" value="subtract">Kurang</button>
+                </form>
+            </td>
+            
+            <!-- <td style="border: 1px solid #000; padding: 8px;">
+                {{ product.amount }}
+                <form method="post" class="quantity-form" action="{% url 'main:add_product' product.id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <button type="submit" name="action" value="add">Tambah</button>
+                </form>
+                <form method="post" class="quantity-form" action="{% url 'main:subtract_product' product.id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <button type="submit" name="action" value="subtract">Kurang</button>
+                </form>
+            </td> -->
+            <td style="border: 1px solid #000; padding: 8px;">{{ product.description }}</td>
+            <td style="border: 1px solid #000; padding: 8px;">{{ product.date_added }}</td>
+            <td style="border: 1px solid #000; padding: 8px;">
+                <form method="post" class="quantity-form" action="{% url 'main:delete_product' product.id %}">
+                    {% csrf_token %}
+                    <button type="submit" name="action" value="delete">Hapus</button>
+                </form>
+            </td>
+        </tr>
         {% endfor %}
     </table>
-    
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
 
     <br />
 
@@ -69,6 +99,14 @@
     <a href="{% url 'main:create_product' %}">
         <button>
             Add New Product
+        </button>
+    </a>
+
+    
+
+    <a href="{% url 'main:logout' %}">
+        <button>
+            Logout
         </button>
     </a>
 
