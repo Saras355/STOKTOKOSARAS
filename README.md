@@ -1,3 +1,110 @@
+# TUGAS 4
+## 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+Django UserCreationForm adalah formulir bawaan Django untuk memudahkan pembuatan akun pengguna dalam aplikasi web, sehingga kita tidak perlu lagi membuat dari scratch untuk logika pendaftaran akun pengguna. Pada form ini , pengguna dapat memasukkan informasi seperti nama pengguna, kata sandi, dan alamat email. Kelebihan dari formulir bawaan ini, antara lain:
+Mudah digunakan: Karena sudah terintegrasi dengan Django, kita tidak perlu membuat formulir pendaftaran dari awal, sehingga menghemat waktu dan usaha. 
+Validasi otomatis : Data yang diinput oleh pengguna secara otomatis akan divalidasi, seperti kekuatan kata sandi dengan standar panjang dan karakteristik tertentu. 
+Fleksibilitas: Formulir ini bisa disesuaikan sesuai dengan kebutuhan aplikasi kita. Kita bisa menambahkan atau menghapus field sesuai dengan kebutuhan kita. 
+Keamanan: Kata sandi pengguna di enkripsi secara otomatis sebelum disimpan ke dalam database. Hal ini menjaga keamanan informasi pengguna. 
+Kekurangan dari penggunaan UserCreationForm di Django dapat terjadi dalam beberapa situasi, seperti kebutuhan aplikasi kita tidak coockdengan template form abwaan atau jika kita menginginkan tingkat kustomisasi yang tinggi. Misalnya, saya ingin membuat validasi tambahan seperti verifikasi email, pengecekan unik untuk email dan nomor telepon, proses pendaftaran yang lebih rumit (seperti, permintaan persetujuan admin sebelum akun dapat diakses), dan ketiga tingkat kustomisasi tinggi (seperti, penyesuaian tampilan seperti penggunaan animasi khusus, integrasi dengan sistem pihak ketiga). 
+Django UserCreationForm adalah formulir bawaan Django untuk memudahkan pembuatan akun pengguna dalam aplikasi web, sehingga kita tidak perlu lagi membuat dari scratch untuk logika pendaftaran akun pengguna. Pada form ini , pengguna dapat memasukkan informasi seperti nama pengguna, kata sandi, dan alamat email. Kelebihan dari formulir bawaan ini, antara lain:
+Mudah digunakan: Karena sudah terintegrasi dengan Django, kita tidak perlu membuat formulir pendaftaran dari awal, sehingga menghemat waktu dan usaha. 
+Validasi otomatis : Data yang diinput oleh pengguna secara otomatis akan divalidasi, seperti kekuatan kata sandi dengan standar panjang dan karakteristik tertentu. 
+Fleksibilitas: Formulir ini bisa disesuaikan sesuai dengan kebutuhan aplikasi kita. Kita bisa menambahkan atau menghapus field sesuai dengan kebutuhan kita. 
+Keamanan: Kata sandi pengguna di enkripsi secara otomatis sebelum disimpan ke dalam database. Hal ini menjaga keamanan informasi pengguna. 
+Kekurangan dari penggunaan UserCreationForm di Django dapat terjadi dalam beberapa situasi, seperti kebutuhan aplikasi kita tidak coockdengan template form abwaan atau jika kita menginginkan tingkat kustomisasi yang tinggi. Misalnya, saya ingin membuat validasi tambahan seperti verifikasi email, pengecekan unik untuk email dan nomor telepon, proses pendaftaran yang lebih rumit (seperti, permintaan persetujuan admin sebelum akun dapat diakses), dan ketiga tingkat kustomisasi tinggi (seperti, penyesuaian tampilan seperti penggunaan animasi khusus, integrasi dengan sistem pihak ketiga). 
+
+## 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+Autentifikasi merupakan proses verifikasi identitas pengguna, yakni memastikan bahwa pengguna dapat mengklaim identitasnya adalah pengguna sebenarnya. Otorisasi merupakan proses yang memutuskan apa yang dapat dilakukan oleh pengguna yang telah diautentikasi, seperti mengendalikan akses ke sumber daya atau fitur tertentu dalam aplikasi. Baik autentikasi dan otorisasi penting dalam konteks Django, karena:
+Autentifikasi memastikan bahwa hanya pengguna yang sah yang dapat mengakses suatu aplikasi, sehingga mekanisme melindungi data sensitif dan menghindari akses yang tidak sah. 
+Otorisasi memungkinkan pengguna mengontrol apa yang dapat dilakukan oleh pengguna yang telah diautentikasi, sehingga berbagai tindakan yang tidak bertanggung jawab dari pengguna yang tidak memiliki izin dapat diatasi, seperti mengakses halaman tertentu atau mengedit data. 
+
+## 3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+Cookies adalah file kecil yang disimpan di sisi klien (browser) dan digunakan oleh server web untuk menyimpan data sesi atau informasi pengguna. Dalam konteks Django, cookies digunakan untuk mengelola data sesi pengguna, seperti informasi otentikasi atau preferensi pengguna. Django menggunakan cookies untuk mengidentifikasi pengguna yang telah diotentikasi dan menyimpan informasi yang diperlukan untuk mempertahankan sesi pengguna, seperti token otentikasi atau ID sesi.
+
+## 4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+Secara default, penggunaan cookies dalam pengembangan web menjadi aman jika dilakukan dengan benar, tetapi terdapat beberapa risiko potensial yang perlu diwaspadai, antara lain:
+Cross-Site Scripting (XSS) : XSS adalah serangan di mana penyerang memasukkan kode berbahaya (biasanya JavaScript) ke dalam halaman web yang kemudian dieksekusi oleh pengguna yang melihat halaman tersebut. Dalam serangan XSS, penyerang dapat mencuri cookies pengguna atau melakukan tindakan berbahaya atas nama pengguna jika cookies sesi atau informasi otentikasi tersimpan dalam cookies. Tanpa sanitasi yang cukup di sisi server, penyerang dapat mengeksploitasi celah ini untuk mencuri data atau menjalankan aksi yang tidak sah atas nama pengguna.
+Session Hijacking : Serangan ini terjadi ketika penyerang mencuri token sesi pengguna atau cookies sesi yang valid untuk mengambil alih sesi pengguna yang sah. Jika cookies sesi pengguna dicuri, penyerang dapat menggunakan cookies tersebut untuk berpura-pura sebagai pengguna yang sah dan mengakses akun pengguna tanpa izin.
+Cookie Theft: Penyerang dapat mencuri cookies pengguna jika mereka berhasil mengakses atau memanipulasi cookies yang tersimpan di perangkat pengguna. Ini dapat terjadi jika pengguna terinfeksi malware atau jika ada celah keamanan dalam aplikasi web. Jika cookies pengguna dicuri, penyerang dapat memanfaatkannya untuk mengakses akun pengguna, mengakses informasi pribadi, atau bahkan melakukan tindakan ilegal atas nama pengguna.
+Data Privacy: Jika data pribadi atau sensitif tersimpan dalam cookies tanpa enkripsi yang cukup atau kebijakan privasi yang ketat, maka privasi pengguna dapat terancam. Jika data pribadi tersimpan dalam cookies tanpa enkripsi yang memadai, penyerang atau pihak yang tidak berwenang dapat dengan mudah mengakses data ini, yang dapat mencakup informasi seperti alamat email, informasi keuangan, atau informasi pribadi lainnya.
+
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+UserCreationForm merupakan form bawaan dari Django untuk menampilkan form dengan logika untuk mendaftarkan user dengan standar pengisian salah satunya untuk password. Di file views.oy, dalam fungsi register, kita mengambil UserCreationForm() ke dalam variabel form, kemudian mengecek apa form valid atau tidak. Setelah pengecekan valid atau tidak itu baru register.html dirender.  
+Kemudian, autentikasi dimasukkan ke dalam proses fungsi login user, dengan mengepasss request, username, dan password. 
+
+fungsi logout dengan hanya menerima request dan men redirect ke main:login.  Untuk ketiga fungsi tersebut, kita juga membuat html. 
+Ketiga fungsi untuk register, login_user, logout diimpor dari urls.py dan dimasukkan ke dalam urlpatterns. 
+Karena ada fungsi show_main yang seharusnya diperlihatkan hanya untuk pengguna yang login maka kita mengimpor 
+from django.contrib.auth.decorators import login_required
+dan menambahkan 
+@login_required(login_url='/login')
+def show_main(request):
+
+
+Menggunakan data dari cookies
+Kita mengubah if user is Not none dengan menambahkan kode
+response.set_cookie('last_login', str(datetime.datetime.now())) . 
+Kode diatas akan membuat _cookie last_login dan menambahkannya ke dalam response. Last_login hasil juga dimasukkan ke dalam variabel context, ini akan ditampilkan di halaman web. 
+Sedangkan untuk fungsi logout_user, kita menambahkan kode 
+response.delete_cookie('last_login')
+Ketika user melakukan log out, kita menghapus cookie yang ada. 
+Karena last_login dimasukkan ke dalam context maka ini ditampilkan dengan memasukkan {{last_login}} kedalam html. 
+
+Menghubungkan model product dengan user
+Dimulai dengan menambahkan kode diabwah untuk models.py
+from django.contrib.auth.models import User
+
+Kemudian membuat class Product 
+class Product(models.Model):
+user = models.ForeignKey(User, on_delete=models.CASCADE)
+kode dibatas membuat relationship yang mengasosiasikan suatu produk dengan seorang user. 
+
+Kemudian untuk fungsi create_product di views.py keitka mau save form menjadi product ditambahkan commit=False untuk mencegah Djagi tidak langsung disimpan langsung ke database, sehingga kita bisa memodifikasi terlebih dahulu. Kemudian kita juga membuat field product dengan product.user = request.user. 
+
+Di fungsi show_main, kode Product.objects.filter ditambah parameternya dengan user=request.user dengan context ditambah dengan ‘name’ : request.user.username
+Tambahan untuk membuat bonus
+Mendefinisikan fungsi  seperti add_product, substract_product di class Product di models.py
+Ketiga fungsi menggunakan kode @login_required(login_url='/login')
+Untuk memastikan bahwa hanya akun yang sedang login dengan produknya sendiri saja yang bisa melakukan add, subtract dan delete product ini. 
+untuk tambahan product -> menambahkan fungsi add_product, yang didalamnya berupa:
+@login_required(login_url='/login')
+def add_product(request, product_id):
+    if request.fungsi == 'POST':
+        product = Product.objects.get(pk=product_id)
+        quantity = 1  
+        product.amount += quantity
+        product.save()
+    return redirect('main:show_main')
+fungsi menge-pass request dan product_id, request untuk memastikan bahwa fungsinya berupa POST, kemudian mengambil product berdasarkan product_id yang sudah dipass, mendefinisikan interger untuk variabel quantity dengan angka 1. Kemudian, mengupdate amount dari product dengan quantity dengan menambah field dari product, kemudian menyimpan product dengan field terbarunya, setelah itu laman di redirect ke main. 
+untuk mengurangi product -> menambahkan fungsi subtract_product, yang didalamnya berupa:
+Sedangkan sama untuk mengurangi product, juga mengambil kuantitas dari product dengan mengambil field amount dan menguranginya dengan variabel quantity yangs ama dengan 1. Bedanya hanya memastikan bahwa produt_amount itu lebih besar dari sama dengan 1, sehingga jika nilainya sudah 0 tidak dikurangi lagi. 
+untuk mendelete product -> menambahkan fungsi delete_product yang didalamnya berupa :
+def delete_product(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    # Memastikan hanya pemilik produk yang dapat menghapusnya
+    if product.user == request.user:
+        product.delete()
+    return redirect('main:show_main')
+fungsi delete product, pertama-tama mengambil product terlebih dahulu dengan get_object_or_404, 404, untuk respon ketika tidak ada product yang diambil. Kemudian, memastikan lagi bahwa request user sekarang adalah pemilik produk dengan product.user. Setelah itu mendelete produk dan balik lagi ke redirect, melalui (‘main : show_main’).
+
+Setelah memasukkan fungsi di views, kita membuat path di urls pattern
+  path('add_stock/<int:product_id>/', add_product, name='add_product'),
+    path('subtract_product/<int:product_id>/', subtract_product, name='subtract_product'),
+    path('delete_product/<int:product_id>/', delete_product, name='delete_product'),
+
+Untuk interface, memasukkan button add, subtract dan delete ke dalam main.html, tepatnya pada tabel  dengan tiap button dikaitkan dengan action yang sudah didefinisikan seperti ini. 
+ <td style="border: 1px solid #000; padding: 8px;">
+                {{ product.amount }}
+                <form fungsi="post" action="{% url 'main:add_product' product.id %}">
+                    {% csrf_token %}
+                    <button type="submit" name="action" value="add">Tambah</button>
+                </form>
+                <form fungsi="post" action="{% url 'main:subtract_product' product.id %}">
+                    {% csrf_token %}
+                    <button type="submit" name="action" value="subtract">Kurang</button>
+                </form>
+            </td>
+
 # TUGAS 3
 ## 1. Perbedaan POST dan GET
 ### a. Dalam pengiriman data
