@@ -2,33 +2,118 @@
 
 {% block meta %}
     <title>Register</title>
+    <style>
+        /* Gaya untuk latar belakang dan kontainer register */
+        .register-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff00cc, #3333ff, #00ccff, #33ff00);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s linear infinite;
+        }
+
+        /* Keyframes animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Gaya untuk kartu register */
+        .register-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Gaya untuk judul register */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* Gaya untuk input teks dalam register */
+        .form-control {
+            width: 80%;
+            padding: 15px;
+            margin: 10px auto;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Gaya untuk pesan error */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        /* Gaya untuk tombol dalam register */
+        .btn.register_btn {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Gaya hover untuk tombol register */
+        .btn.register_btn:hover {
+            background-color: #27ae60;
+        }
+    </style>
 {% endblock meta %}
 
-{% block content %}  
-
-<div class = "login">
-    
-    <h1>Register</h1>  
-
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
+{% block content %}
+<div class="register-container">
+    <div class="register-card">
+        <h1>Register</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.username.label_tag }}
+                <input type="text" name="username" placeholder="Username" class="form-control">
+                {% for error in form.username.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.password1.label_tag }}
+                <input type="password" name="password1" placeholder="Password" class="form-control">
+                {% for error in form.password1.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.password2.label_tag }}
+                <input type="password" name="password2" placeholder="Password confirmation" class="form-control">
+                {% for error in form.password2.errors %}
+                    <p class="error-message">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <input class="btn register_btn" type="submit" name="submit" value="Daftar">
+            </div>
         </form>
-
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
-
-</div>  
-
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
 {% endblock content %}

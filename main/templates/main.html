@@ -28,86 +28,100 @@
             margin-top: 0; /* Hapus margin atas secara default pada elemen p */
             margin-bottom: 10px; /* Ruang bawah elemen p */
         }
+
+        /* Gaya untuk card produk */
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Gaya untuk tombol tambah dan kurang */
+        .quantity-form {
+            display: inline-block;
+            margin: 0;
+        }
+
+        .quantity-form button {
+            padding: 5px 10px;
+            font-size: 14px;
+            margin-left: 5px;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quantity-form button:hover {
+            background-color: #2980b9;
+        }
+
+        .new-product {
+            color: #e74c3c;
+        }
     </style>
 </head>
-    <h1>List Barang Toko Saras</h1>
-    
-    <h5>Name: {{name}}</h5>
-    <!-- <p>{{name}}</p> -->
+<h1>List Barang Toko Saras</h1>
 
-    <h5>Class: {{class}}</h5>
-    <!-- <p></p> -->
-    <p>Kamu menyimpan {{ total_items }} item pada toko ini.</p>
-    
-    <table style="border-collapse: collapse; width: 100%;">
-        <tr>
-            <th style="border: 1px solid #000; padding: 8px;">Name</th>
-            <th style="border: 1px solid #000; padding: 8px;">Price</th>
-            <th style="border: 1px solid #000; padding: 8px;">Amount</th>
-            <th style="border: 1px solid #000; padding: 8px;">Description</th>
-            <th style="border: 1px solid #000; padding: 8px;">Date Added</th>
-        </tr>
-    
-        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-    
-        {% for product in products %}
-        <tr>
-            <td style="border: 1px solid #000; padding: 8px;">{{ product.name }}</td>
-            <td style="border: 1px solid #000; padding: 8px;">{{ product.price }}</td>
-            <td style="border: 1px solid #000; padding: 8px;">
-                {{ product.amount }}
-                <form method="post" action="{% url 'main:add_product' product.id %}">
-                    {% csrf_token %}
-                    <button type="submit" name="action" value="add">Tambah</button>
-                </form>
-                <form method="post" action="{% url 'main:subtract_product' product.id %}">
-                    {% csrf_token %}
-                    <button type="submit" name="action" value="subtract">Kurang</button>
-                </form>
-            </td>
-            
-            <!-- <td style="border: 1px solid #000; padding: 8px;">
-                {{ product.amount }}
-                <form method="post" class="quantity-form" action="{% url 'main:add_product' product.id %}">
-                    {% csrf_token %}
-                    <input type="hidden" name="product_id" value="{{ product.id }}">
-                    <button type="submit" name="action" value="add">Tambah</button>
-                </form>
-                <form method="post" class="quantity-form" action="{% url 'main:subtract_product' product.id %}">
-                    {% csrf_token %}
-                    <input type="hidden" name="product_id" value="{{ product.id }}">
-                    <button type="submit" name="action" value="subtract">Kurang</button>
-                </form>
-            </td> -->
-            <td style="border: 1px solid #000; padding: 8px;">{{ product.description }}</td>
-            <td style="border: 1px solid #000; padding: 8px;">{{ product.date_added }}</td>
-            <td style="border: 1px solid #000; padding: 8px;">
-                <form method="post" class="quantity-form" action="{% url 'main:delete_product' product.id %}">
-                    {% csrf_token %}
-                    <button type="submit" name="action" value="delete">Hapus</button>
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
+<h5>Name: {{name}}</h5>
+<!-- <p>{{name}}</p> -->
 
-    <br />
+<h5>Class: {{class}}</h5>
+<!-- <p></p> -->
+<p>Kamu menyimpan {{ total_items }} item pada toko ini.</p>
 
-    
+{% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
 
-    <a href="{% url 'main:create_product' %}">
-        <button>
-            Add New Product
-        </button>
-    </a>
+{% for product in products %}
+<div class="product-card{% if forloop.last %} new-product{% endif %}">
+    <h3>{{ product.name }}</h3>
+    <p>Price: {{ product.price }}</p>
+    <p>Amount: {{ product.amount }}</p>
+    <form method="post" action="{% url 'main:add_product' product.id %}" class="quantity-form">
+        {% csrf_token %}
+        <button type="submit" name="action" value="add">Tambah</button>
+    </form>
+    <form method="post" action="{% url 'main:subtract_product' product.id %}" class="quantity-form">
+        {% csrf_token %}
+        <button type="submit" name="action" value="subtract">Kurang</button>
+    </form>
+    <p>Description: {{ product.description }}</p>
+    <p>Date Added: {{ product.date_added }}</p>
+    <form method="post" class="quantity-form" action="{% url 'main:delete_product' product.id %}">
+        {% csrf_token %}
+        <button type="submit" name="action" value="delete">Hapus</button>
+    </form>
+</div>
+{% endfor %}
 
-    
+<h5>Sesi terakhir login: {{ last_login }}</h5>
 
-    <a href="{% url 'main:logout' %}">
-        <button>
-            Logout
-        </button>
-    </a>
+<br />
+
+<a href="{% url 'main:create_product' %}">
+    <button>
+        Add New Product
+    </button>
+</a>
+
+<a href="{% url 'main:logout' %}">
+    <button>
+        Logout
+    </button>
+</a>
 
 {% endblock content %}

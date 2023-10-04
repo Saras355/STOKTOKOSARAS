@@ -1,3 +1,111 @@
+# TUGAS 5
+## 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya
+Element selectors dalam CSS berguna untuk menentukan gaya atau tampilan elemen HTML tertentu pada halaman website. Jenis - jenis element selector beserta manfaat dan penggunaan yang tepat, atnara lain:
+1. Type Selector atau Element selector
+Selector tipe memungkinkan kita untk memilih semua elemen dengna jenis tag tertentu, seperti <p> atau <h1>.  
+2. Universal Selector (‘*’)
+Universal selector digunakna utnk memilih semua elemen dalam dokumen HTML. 
+3. ID Selector (‘#id’)
+ID Selector digunakan untuk memilih elemen yang hanya berartibut ‘id’. Penggunaannya jika kita inigin mengganti gaya atau perilaku elemen dengan ID tertentu. 
+4. Class Selector (‘.class’)
+Class selector digunakan untuk memilih elemen dengan atribut ‘class’. Penggunaan class ini untuk mengelompokkan elemen yang memliki karakteristik serupa dan mengganti gaya atau perilaku mereka. 
+5. Attribute Selector (‘[attribute]’)
+Attribute selector memungkinkan kita untuk memilih elemen bedasarkan atribtu yang dimiliki, seperti ‘[type=”text”]’ untuk memilih input dengan atribut ‘type=”text”. 
+6. Pseudo-class Selector (‘:pseudo-class;)
+Pseudo-class selector memungkinkan kita untuk memilih elemen bedasrkan keadaan atau interaksi dengan elemen , seperti melakukan ‘:hover’ yang berfungsi untk mengubah gaya saat mouse kita berada di atas elemen. 
+7. Pseudo-element Selector (‘::pseudo-element ‘)
+Pseudo-element selector dapt digunakan untuk membuat gaya untuk bagian khusus elemen, seperti ‘::before’ dan ‘::after” untuk menambhakan konten sebelum dan sesudah elemen.  
+
+## 2. Jelaskan HTML5 Tag yang kamu ketahui
+a. <!DOCTYPE html> : ini bisa dibilang tidak masuk dalam tag tetapi ini digunakan untuk  deklarasi awal dokumen HTML5 untuk memberi tahu browser bahwa dokumen akan menggunakan standar HTML5.
+b. <html> : menanadakan awal dan akhir dari dokumen HTML, di dalam tag ini berisi seluruh konten HTML
+c. <head> : sebagai wadah untuk menyimpan informasi tentang dokumen, seperti tautan ke stylesheet, judul halama (title), dan lainnya. 
+d. <meta> : digunakan untuk menyertakan metada dalam dokumen, speerti karakter encoding, deskripsi halaman, dan instruksi untuk mengendalikan indeks mesin pencari. 
+e. <title> : untk menentukan judul halaman yang akan ditampilkan di tab browser
+f. <link> : digunakan untuk menghubungkan dokumen HTML dengan stylesheet eksternal atau sumber daya lainnya
+g.<style> : utnuk mengintegrasikan/ menyisipkan CSS langsung ke dalam dokumen HTML
+h.<script> : digunakan utnuk menyisipkan skrip JavaScript ke dalam dokumen HTML, ini bisa ditempatkan di dalam bagian <head> atau <body>
+i.<body> : berisi konten utama dari halaman website, termasuk teks, gambar, tautan, dan elemen lainnya. Konten ini yang akan menjadi tampilan kepada pengguna. 
+j.<header> : untuk menandai bagian awal dari sebuah dokumen atau bagain dari halaman web, seperti judul, logo, atau elemen-elemen lain yang berhubungan dengan kepala halaman
+k. <nav> : digunakan untuk mengelompokkan tautan navigasi dalam dokumen, seperti menu utama halaman website. 
+l. <main> : menandakan konten utama dari dokumen,biasnaya hanya dibuat satu tag itu saja dalam satu halaman web
+m. <article> : mengelompokkan konten mandiri dalam dokumen, seperti berita, posting blog, artikel. 
+n. <section> : mengelompokkan konten yang memiliki tema atau konteks tertentu, dan membantu dalam pemahaman struktur halaman. 
+o. <aside> : digunakan untuk menandai konten yang bukan bagian utama dari halaman, seperti sidebar yang berisi informasi tambahan atau tautan terkait.
+p. <footer> : untuk menandai bagian akhir dari dokumen atau bagian halaman seperti biasa informasi kontak, tautan ke halaman lain, atau hak cipta 
+q. <figure> dan <figcaption> : digunakan bersama-sama untuk menyertakan gambar atau ilustrasi dengan keterangan. 
+r.<video> dan <audio> : digunakan untuk menyisipkan video atau audio dalam dokumen, dengan atribut yang memungkinkan dalam mengontrol pemutaran media
+s.<canvas> : digunakan utnuk membaut gambar, grafik, dan animasi dalam menggunakan JavaScript
+t.<form> : digunakan utnuk membuat formulir interkatif (pengguna dapat mengirimkan data ke server)
+u.<input> : digunakan dalam formulir untuk mengambil berbagai jenis masukan, seperti teks, kotak centang, tombol radio, dll. 
+v.<button> : digunakan untuk membuat tombol yang dapat diklik oleh pengguna
+w.<iframe> : digunakan utnuk menanamkan dokumen HTML atau halaman webiste lainnya di dalam dokumen HTML. 
+## 3. Jelaskan perbedaan antara margin dan padding
+    Baik margin dan padding memengrauhi tata letak elemen dalam halaman web Keduanya memiliki perbedaan, antara lain: 
+a. Margin:
+    Margin merupakan area di luar batas elemen. Ini mengatur jarak antara elemen dan elemen-elemen lain di sekitarnya. Margin tidak memiliki latar belakang atau warna. Margin menagtur tata letak eleemn terhadap elemen-elemen lain. Elemen dapat diatur margin atas, bawah, kanan dan kiri dari elemen untuk mengontrol sebarap jauh elemen tersebut akan berjarak dari elemen-elemen tetangganya. Margin tidak memiliki pengaruh terhadap latar belakang elemen. 
+b. Padding:
+    Padding adalah area di dalam batas elemen. Ini mengatur ruang anatara batas elemen dan kontennya.  Padding dapat memliki latar belakang atau warna untuk padding elemen yang muncul di sekitar kontennya. Padding memengaruhi tata letak konten dalam elemen itu. Kita dapat mengatur padding atas, bawah , akan, dan kiri dari elemen untuk mengatur seberapa jauh konten akan berjarak dari batas elemen. Padding hanya memengaruhi elemen itu sendiri, tidak elemn-elemen di sekitarnya. 
+## 4. Perbedaan antara Tailwind CSS dan Bootstrap
+a. Pendekatan Desain
+    - Tailwind CSS : Pendekatan “utility-first” yang memberikan banyak kelas kecil yang dapat digunakan untuk menggabungkan styling secara modular. Tampilan dalam HTML dengan menggabungkan kelas-kelas. 
+    - Bootstrap : Pendekatannya lebih tradisional dalam desain. Bootstrap menyediakan sejumlah komponen user interface yang telah dirancang dengan baik yang dapat digunakan denagn mudah, serta gaya dan komponen yagntelah ditentukan sebelumnya. 
+b. Ukuran dan Kustomisasi 
+    - Tailwind CSS: Ukuran dan kustomisasi lebih ringan dan kita memililki lebih banyak kontrol atas tampilakn kta. Kita hanya menggunakan ap auyang kita butuhkan dan dapat menyeseuaikan tmapilan dengan mudah dengan mengedit konfigurasi. 
+    - Bootstrap: Ukuran dan kustomisasi lebih besar dan memilki lebih banyak gaya bawaan serta komponen yagn telah dirancang sebelumnya. Jika kita hanya memerlukan eberapa komponen atau ingin tampilan yang sanagt khusus, penggunaan Bootstrap sangat berat. 
+c. Kode HTML
+    - Tailwind CSS: Di dokumen HTML, kita perlu menulis kode lebih bnyak karae harus menambhakan banyak kelas ke elemen untuk mengatur styling. 
+    - Bootstrap: Memerlukan lebih sedikit penulisan kode HTML karena dapat mengguankan komponen Bootstrap yang sudha jadi. 
+d. Tampilan dan Gaya
+    - Tailwind CSS: Memiliki fleksibilitas yang lebih besar dalam mengontrol tampilan elemen dan memungkinkan tampilan yang sangat khusus. 
+    - Bootstrap: Memberikan tampilan yang lebih konsisten dan tersturktu secara bawaan, tetapi kurang fleksibel untuk tampilan yang sangat khusus. 
+- Kita mengguanakan bootstrap ketika kita memerlukan penegmbangan cepat denagn komponen user interface yang telah dirancang sebelumnya, ingin teingin tampilan yang konsisten dengan sedikit usaha desain, menghindari menulis banyak kode HTML untuk mengatur tampilan.
+- Kita menggunakan Tailwind CSS ketika mengiginkan fleksibilitas maksimal dalam mengontorol tampilan dan tata letak elemen, menghindari ketergantungan pada banyak gaya bawaan yang mungkin kita tidak perlukan, dan siap menulis lebih banyak kode HTML untuk menggabungkan kelas - kelas Tailwind. 
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checkist di atas secara step-by-step
+Karena menggunakan static files, maka kita menaruh kode pada setting.py seperti STATIC_ROOT yang menentukan absolute path ke direktori files ketika menjalankan perintah collecstatic pada proyek dan terdapat STATIC_URL yang merupakan URL yang dapat diakses publik untk memperoleh static files.  Sedangkan di STATIC_URL merupakan URL dapat diakses publik untuk memperoleh static files tersebut.
+Saya menggunakan ID Selecotr untuk menggunakan ID pada tag dalam satu halaman website yang saya terapkan pada template HTML di register.html:
+<div class="register-container">
+    <div class="register-card">
+
+
+	yang didalamnya terdapa input untuk username dan password . Sleanjutkanya di block meta saya mendefinsikan tag style <style>, yang mendefinsikan tiap class. sebagai salah satu contoh. 
+ .register-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff00cc, #3333ff, #00ccff, #33ff00);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s linear infinite;
+        }
+
+
+        /* Keyframes animation */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+
+Untuk pengerjaan bonus, saya mengganti div class yang hanya berupa product-card menjadi 
+<div class="product-card{% if forloop.last %} new-product{% endif %}">
+Jika forloop.last adalah True, maka elemen div akan memiliki kelas product-card new-product.
+Jika forloop.last adalah False, maka elemen div hanya akan memiliki kelas product-card
+
+ .new-product {
+            color: #e74c3c;
+        }
+
+untuk nama proudk terbaru teksnya menggunakan warna merah.
+
+
+
+
+
 # TUGAS 4
 ## 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
 Django UserCreationForm adalah formulir bawaan Django untuk memudahkan pembuatan akun pengguna dalam aplikasi web, sehingga kita tidak perlu lagi membuat dari scratch untuk logika pendaftaran akun pengguna. Pada form ini , pengguna dapat memasukkan informasi seperti nama pengguna, kata sandi, dan alamat email. Kelebihan dari formulir bawaan ini, antara lain:
