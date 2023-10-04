@@ -17,29 +17,29 @@ Pseudo-class selector memungkinkan kita untuk memilih elemen bedasrkan keadaan a
 Pseudo-element selector dapt digunakan untuk membuat gaya untuk bagian khusus elemen, seperti ‘::before’ dan ‘::after” untuk menambhakan konten sebelum dan sesudah elemen.  
 
 ## 2. Jelaskan HTML5 Tag yang kamu ketahui
-a. <!DOCTYPE html> : ini bisa dibilang tidak masuk dalam tag tetapi ini digunakan untuk  deklarasi awal dokumen HTML5 untuk memberi tahu browser bahwa dokumen akan menggunakan standar HTML5.
-b. <html> : menanadakan awal dan akhir dari dokumen HTML, di dalam tag ini berisi seluruh konten HTML
-c. <head> : sebagai wadah untuk menyimpan informasi tentang dokumen, seperti tautan ke stylesheet, judul halama (title), dan lainnya. 
-d. <meta> : digunakan untuk menyertakan metada dalam dokumen, speerti karakter encoding, deskripsi halaman, dan instruksi untuk mengendalikan indeks mesin pencari. 
-e. <title> : untk menentukan judul halaman yang akan ditampilkan di tab browser
-f. <link> : digunakan untuk menghubungkan dokumen HTML dengan stylesheet eksternal atau sumber daya lainnya
-g.<style> : utnuk mengintegrasikan/ menyisipkan CSS langsung ke dalam dokumen HTML
-h.<script> : digunakan utnuk menyisipkan skrip JavaScript ke dalam dokumen HTML, ini bisa ditempatkan di dalam bagian <head> atau <body>
-i.<body> : berisi konten utama dari halaman website, termasuk teks, gambar, tautan, dan elemen lainnya. Konten ini yang akan menjadi tampilan kepada pengguna. 
-j.<header> : untuk menandai bagian awal dari sebuah dokumen atau bagain dari halaman web, seperti judul, logo, atau elemen-elemen lain yang berhubungan dengan kepala halaman
-k. <nav> : digunakan untuk mengelompokkan tautan navigasi dalam dokumen, seperti menu utama halaman website. 
-l. <main> : menandakan konten utama dari dokumen,biasnaya hanya dibuat satu tag itu saja dalam satu halaman web
-m. <article> : mengelompokkan konten mandiri dalam dokumen, seperti berita, posting blog, artikel. 
-n. <section> : mengelompokkan konten yang memiliki tema atau konteks tertentu, dan membantu dalam pemahaman struktur halaman. 
-o. <aside> : digunakan untuk menandai konten yang bukan bagian utama dari halaman, seperti sidebar yang berisi informasi tambahan atau tautan terkait.
-p. <footer> : untuk menandai bagian akhir dari dokumen atau bagian halaman seperti biasa informasi kontak, tautan ke halaman lain, atau hak cipta 
-q. <figure> dan <figcaption> : digunakan bersama-sama untuk menyertakan gambar atau ilustrasi dengan keterangan. 
-r.<video> dan <audio> : digunakan untuk menyisipkan video atau audio dalam dokumen, dengan atribut yang memungkinkan dalam mengontrol pemutaran media
-s.<canvas> : digunakan utnuk membaut gambar, grafik, dan animasi dalam menggunakan JavaScript
-t.<form> : digunakan utnuk membuat formulir interkatif (pengguna dapat mengirimkan data ke server)
-u.<input> : digunakan dalam formulir untuk mengambil berbagai jenis masukan, seperti teks, kotak centang, tombol radio, dll. 
-v.<button> : digunakan untuk membuat tombol yang dapat diklik oleh pengguna
-w.<iframe> : digunakan utnuk menanamkan dokumen HTML atau halaman webiste lainnya di dalam dokumen HTML. 
+a. !DOCTYPE html : ini bisa dibilang tidak masuk dalam tag tetapi ini digunakan untuk  deklarasi awal dokumen HTML5 untuk memberi tahu browser bahwa dokumen akan menggunakan standar HTML5.
+b. html : menanadakan awal dan akhir dari dokumen HTML, di dalam tag ini berisi seluruh konten HTML
+c. head: sebagai wadah untuk menyimpan informasi tentang dokumen, seperti tautan ke stylesheet, judul halama (title), dan lainnya. 
+d. meta : digunakan untuk menyertakan metada dalam dokumen, speerti karakter encoding, deskripsi halaman, dan instruksi untuk mengendalikan indeks mesin pencari. 
+e. title : untk menentukan judul halaman yang akan ditampilkan di tab browser
+f. link: digunakan untuk menghubungkan dokumen HTML dengan stylesheet eksternal atau sumber daya lainnya
+g.style : utnuk mengintegrasikan/ menyisipkan CSS langsung ke dalam dokumen HTML
+h.script : digunakan utnuk menyisipkan skrip JavaScript ke dalam dokumen HTML, ini bisa ditempatkan di dalam bagian <head> atau <body>
+i.body : berisi konten utama dari halaman website, termasuk teks, gambar, tautan, dan elemen lainnya. Konten ini yang akan menjadi tampilan kepada pengguna. 
+j.header : untuk menandai bagian awal dari sebuah dokumen atau bagain dari halaman web, seperti judul, logo, atau elemen-elemen lain yang berhubungan dengan kepala halaman
+k. nav : digunakan untuk mengelompokkan tautan navigasi dalam dokumen, seperti menu utama halaman website. 
+l. main : menandakan konten utama dari dokumen,biasnaya hanya dibuat satu tag itu saja dalam satu halaman web
+m. article : mengelompokkan konten mandiri dalam dokumen, seperti berita, posting blog, artikel. 
+n. section : mengelompokkan konten yang memiliki tema atau konteks tertentu, dan membantu dalam pemahaman struktur halaman. 
+o. aside : digunakan untuk menandai konten yang bukan bagian utama dari halaman, seperti sidebar yang berisi informasi tambahan atau tautan terkait.
+p. footer : untuk menandai bagian akhir dari dokumen atau bagian halaman seperti biasa informasi kontak, tautan ke halaman lain, atau hak cipta 
+q. figure dan figcaption : digunakan bersama-sama untuk menyertakan gambar atau ilustrasi dengan keterangan. 
+r.video dan audio : digunakan untuk menyisipkan video atau audio dalam dokumen, dengan atribut yang memungkinkan dalam mengontrol pemutaran media
+s.canvas : digunakan utnuk membaut gambar, grafik, dan animasi dalam menggunakan JavaScript
+t.form : digunakan utnuk membuat formulir interkatif (pengguna dapat mengirimkan data ke server)
+u.input: digunakan dalam formulir untuk mengambil berbagai jenis masukan, seperti teks, kotak centang, tombol radio, dll. 
+v.button : digunakan untuk membuat tombol yang dapat diklik oleh pengguna
+w.iframe : digunakan utnuk menanamkan dokumen HTML atau halaman webiste lainnya di dalam dokumen HTML. 
 ## 3. Jelaskan perbedaan antara margin dan padding
     Baik margin dan padding memengrauhi tata letak elemen dalam halaman web Keduanya memiliki perbedaan, antara lain: 
 a. Margin:
