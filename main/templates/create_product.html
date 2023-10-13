@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block meta %}
     <title>Add New Product</title>
     <style>
@@ -41,7 +40,7 @@
 
         /* Gaya untuk input teks dalam form */
         .form-control {
-            width: 80%;
+            width: 100%;
             padding: 15px;
             margin-bottom: 15px;
             border: none;
@@ -66,20 +65,40 @@
         }
     </style>
 {% endblock meta %}
-
 {% block content %}
-<div class="form-container">
-    <div class="form-card">
-        <h1>Add New Product</h1>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-                {{ form.as_table }}
+<div class="container">
+    <div class="row justify-content-center vh-100 align-items-center form-container">
+        <div class="col-md-6">
+            <div class="card form-card">
+                <div class="card-header">
+                    <h1 class="mb-0 text-center">Add New Item</h1>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price:</label>
+                            <input type="text" class="form-control" id="price" name="price">
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount:</label>
+                            <input type="text" class="form-control" id="amount" name="amount">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea class="form-control" id="description" name="description" rows="4"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn submit_btn mt-4">Add Item</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <input class="btn submit_btn" type="submit" value="Add Product">
-            </div>
-        </form>
+        </div>
     </div>
 </div>
-{% endblock content %}
+{% endblock %}
